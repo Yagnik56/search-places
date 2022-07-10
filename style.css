@@ -1,0 +1,74 @@
+html {
+  font-size: 16px;
+  color: rgb(33, 37, 41);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+table {
+  border: 1px solid black;
+  margin: 12px 0px;
+  padding: 12px;
+}
+
+tr {
+  padding: 32px 0px;
+}
+
+td {
+  padding: 0px 12px;
+}
+
+img {
+  width: 12px;
+  height: 12px;
+  border: 1px solid black;
+}
+
+.search-field {
+  width: 241px;
+  height: 38px;
+  font-size: 16px;
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(206, 212, 218);
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 12px;
+  /* Padding-right: as-needed;  */
+  border-radius: 4px;
+}
+
+.search-btn {
+  height: 38px;
+  border-color: rgb(206, 212, 218);
+  border-radius: 4px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.resultTableContainer{
+  width: 100%;
+}
+
+.pagination-container {
+  display: none;
+  height: 32px;
+  gap: 32px;
+  align-items: center;
+  margin: 12px 0px;
+}
+
+.pagination-result-container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.limit-input-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

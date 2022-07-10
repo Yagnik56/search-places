@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search cities</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="search-box-container">
+      <input
+        class="search-field"
+        type="search"
+        name="searchterm"
+        placeholder="Search for a city..."
+      />
+      <button class="search-btn">Search</button>
+    </div>
+    <div class="result-table-container"></div>
+    <div class="pagination-container">
+      <div class="pagination-result-container">
+        <button class="prev-page-btn">Previous</button>
+        <span class="page-info"></span>
+        <button class="next-page-btn">Next</button>
+      </div>
+      <div class="limit-input-container">
+        <label for="limit-input">Number of cities per page:</label>
+        <input type="number" name="limit" id="limit-input" value="3" />
+        <p class="limit-input-error"></p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
