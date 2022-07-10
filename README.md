@@ -1,2 +1,4 @@
 # search-places
-Searching places from search bar and display them on table
+Searching places from search bar and display them on table with place name 
+
+
