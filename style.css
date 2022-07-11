@@ -1,8 +1,7 @@
 html{
   font-size: 16px;
   color: rgb(33, 37, 41);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
-    Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  font-family: Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -10,14 +9,13 @@ html{
 table {
   width: 100%;
   text-align: left;
-  justify-content: center;
 }
 
 td,th{
   Padding: 10px;
   border: 2px solid black;
   border-color: rgb(222, 226, 230);
-  justify-content: center;
+  flex-direction: row;
 }
 
 th{
@@ -29,7 +27,6 @@ img {
   height: 12px;
   border: 1px solid black;
   margin: 0 5px;
-  padding: 0;
 }
 
 .search-field {
@@ -38,9 +35,7 @@ img {
   font-size: 16px;
   background-color: rgb(255, 255, 255);
   border-color: rgb(206, 212, 218);
-  padding-top: 6px;
-  padding-bottom: 6px;
-  padding-left: 12px;
+  padding: 6px 12px;
   border-radius: 4px;
   width: 92%;
   margin: 10px;
@@ -50,10 +45,7 @@ img {
   height: 38px;
   border-color: rgb(206, 212, 218);
   border-radius: 4px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  padding-left: 6px;
-  padding-right: 6px;
+  padding: 6px;
   width: 6%;
   text-align: center;
   font-weight: 700;
@@ -62,7 +54,6 @@ img {
 .loading-bar{
   margin-left: 48%;
   align-items: center;
-  justify-content: center;
 }
 
 .loader {
@@ -80,8 +71,7 @@ img {
 }
 
 .result-table-container{
-  margin: 12px 0;
-  padding: 12px;
+  margin: 10px;
 }
 
 .pagination-container {
@@ -94,17 +84,18 @@ img {
 
 .pagination-result-container {
   display: flex;
+  justify-content: center;
   margin: 0 8px;
   align-items: center;
-  grid-column-gap: 8px;
+  gap: 8px;
 }
 
 .limit-input-container {
   display: flex;
+  justify-content: center;
   align-items: center;
   margin: 0 8px;
-  grid-column-gap: 8px;
-  justify-content: center;
+  gap: 8px;
 }
 
 .limit-input-error{
