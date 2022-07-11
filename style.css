@@ -7,17 +7,21 @@ html {
 }
 
 table {
-  border: 1px solid black;
-  margin: 12px 0px;
+  margin: 12px 0;
   padding: 12px;
+  width: 100%;
+  text-align: left;
+  justify-content: center;
 }
 
-tr {
-  padding: 32px 0px;
+td,th{
+  Padding: 8px;
+  border: 2px solid black;
+  border-color: rgb(222, 226, 230);
 }
 
-td {
-  padding: 0px 12px;
+th{
+  font-weight: 700;
 }
 
 img {
@@ -35,8 +39,8 @@ img {
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 12px;
-  /* Padding-right: as-needed;  */
   border-radius: 4px;
+  width: 90%
 }
 
 .search-btn {
@@ -47,28 +51,32 @@ img {
   padding-bottom: 6px;
   padding-left: 6px;
   padding-right: 6px;
-}
-
-.resultTableContainer{
-  width: 100%;
+  width: 5%;
+  text-align: center;
 }
 
 .pagination-container {
   display: none;
   height: 32px;
-  gap: 32px;
+  margin: 12px 32px;
   align-items: center;
-  margin: 12px 0px;
 }
 
 .pagination-result-container {
   display: flex;
-  gap: 8px;
+  margin: 0 8px;
   align-items: center;
+  grid-column-gap: 8px;
 }
 
 .limit-input-container {
   display: flex;
   align-items: center;
-  gap: 8px;
+  margin: 0 8px;
+  grid-column-gap: 8px;
+}
+
+.limit-input-error{
+  color: red;
+  margin: 0 8px;
 }

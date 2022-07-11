@@ -20,9 +20,7 @@ const searchBtn = document.querySelector(".search-btn");
 const resultTableContainer = document.querySelector(".result-table-container");
 const paginationContainer = document.querySelector(".pagination-container");
 const pageInfo = document.querySelector(".page-info");
-const paginationResultContainer = document.querySelector(
-  ".pagination-result-container"
-);
+const paginationResultContainer = document.querySelector(".pagination-result-container");
 const prevPageBtn = document.querySelector(".prev-page-btn");
 const nextPageBtn = document.querySelector(".next-page-btn");
 
@@ -30,7 +28,6 @@ const limitInput = document.querySelector("#limit-input");
 const limitInputError = document.querySelector(".limit-input-error");
 
 const showSearchResult = function (emptySearch, resultData) {
-  console.log(resultData);
   if (emptySearch) {
     resultTableContainer.innerHTML = "<p>Start searching..</p>";
     paginationContainer.style.display = "none";
@@ -105,10 +102,12 @@ const showSearchResult = function (emptySearch, resultData) {
 
 const onLimitChange = async function () {
   const limit = limitInput.value;
-  if (limit < 5 || limit > 10) {
-    limitInputError.innerHTML = "<p>Limit must be between 5 and 10</p>";
+  if (limit < 3 || limit > 10) {
+    limitInputError.innerHTML = "<p>Limit value must be between 5 and 10</p>";
     limitInputError.style.display = "block";
-    limitInput.value = limit < 5 ? 5 : 10;
+    limitInput.value = limit < 3 ? 3 : 10;
+    APILimit=limitInput.value;
+    searchFunc();
     return;
   }
   limitInputError.style.display = "none";
