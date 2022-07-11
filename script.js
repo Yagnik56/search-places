@@ -106,9 +106,13 @@ const onLimitChange = async function () {
     limitInputError.innerHTML = "<p>Limit value must be between 5 and 10</p>";
     limitInputError.style.display = "block";
     limitInput.value = limit < 3 ? 3 : 10;
-    APILimit=limitInput.value;
-    searchFunc();
-    return;
+    if(APILimit===limitInput.value){
+      return;
+    }else{
+      APILimit=limitInput.value;
+      searchFunc();
+      return;
+    }
   }
   limitInputError.style.display = "none";
   APILimit = limit;
@@ -149,7 +153,7 @@ const searchFunc = async function () {
   const searchUrl = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities?namePrefix=${searchValue}&limit=${APILimit}&offset=${offset}`;
 
   try {
-    resultTableContainer.innerHTML = `<p>Loading</p>`;
+    resultTableContainer.innerHTML = `<div class="loading-bar"><p>Loading...</p><p class="loader"></p></div> `;
     let response = await fetch(searchUrl, options);
     response = await response.json();
     showSearchResult(false, response);

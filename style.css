@@ -1,23 +1,23 @@
-html {
+html{
   font-size: 16px;
   color: rgb(33, 37, 41);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
-    Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 table {
-  margin: 12px 0;
-  padding: 12px;
   width: 100%;
   text-align: left;
   justify-content: center;
 }
 
 td,th{
-  Padding: 8px;
+  Padding: 10px;
   border: 2px solid black;
   border-color: rgb(222, 226, 230);
+  justify-content: center;
 }
 
 th{
@@ -25,13 +25,15 @@ th{
 }
 
 img {
-  width: 12px;
+  width: 16px;
   height: 12px;
   border: 1px solid black;
+  margin: 0 5px;
+  padding: 0;
 }
 
 .search-field {
-  width: 241px;
+  /*width: 241px;*/
   height: 38px;
   font-size: 16px;
   background-color: rgb(255, 255, 255);
@@ -40,7 +42,8 @@ img {
   padding-bottom: 6px;
   padding-left: 12px;
   border-radius: 4px;
-  width: 90%
+  width: 92%;
+  margin: 10px;
 }
 
 .search-btn {
@@ -51,8 +54,34 @@ img {
   padding-bottom: 6px;
   padding-left: 6px;
   padding-right: 6px;
-  width: 5%;
+  width: 6%;
   text-align: center;
+  font-weight: 700;
+}
+
+.loading-bar{
+  margin-left: 48%;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #3498db;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.result-table-container{
+  margin: 12px 0;
+  padding: 12px;
 }
 
 .pagination-container {
@@ -60,6 +89,7 @@ img {
   height: 32px;
   margin: 12px 32px;
   align-items: center;
+  justify-content: center;
 }
 
 .pagination-result-container {
@@ -74,6 +104,7 @@ img {
   align-items: center;
   margin: 0 8px;
   grid-column-gap: 8px;
+  justify-content: center;
 }
 
 .limit-input-error{
