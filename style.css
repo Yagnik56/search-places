@@ -37,7 +37,7 @@ img {
   border-color: rgb(206, 212, 218);
   padding: 6px 12px;
   border-radius: 4px;
-  width: 92%;
+  width: 85%;
   margin: 10px;
 }
 
@@ -46,7 +46,7 @@ img {
   border-color: rgb(206, 212, 218);
   border-radius: 4px;
   padding: 6px;
-  width: 6%;
+  width:85px;
   text-align: center;
   font-weight: 700;
 }
@@ -101,4 +101,19 @@ img {
 .limit-input-error{
   color: red;
   margin: 0 8px;
+}
+
+@media (max-width:750px) {
+  .search-field {
+    width: 75%;
+  }
+}
+
+@media (max-width:500px) {
+  .search-field {
+    width: 241px;
+  }
+  .search-btn{
+    width: 60px;
+  }
 }

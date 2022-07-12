@@ -10,6 +10,7 @@ const options = {
 
 let APILimit = 3;
 let offset = 0;
+let pagelimit=3;
 
 let currPage = 1;
 let totalPage;
@@ -28,6 +29,7 @@ const limitInput = document.querySelector("#limit-input");
 const limitInputError = document.querySelector(".limit-input-error");
 
 const showSearchResult = function (emptySearch, resultData) {
+  console.log(resultData);
   if (emptySearch) {
     resultTableContainer.innerHTML = "<p>Start searching..</p>";
     paginationContainer.style.display = "none";
@@ -47,7 +49,7 @@ const showSearchResult = function (emptySearch, resultData) {
   }
 
   let resultRows = "";
-  if (!resultData.data) {
+  if(!resultData.data) {
     resultTableContainer.innerHTML = `<p>Something went wrong</p>`;
     paginationContainer.style.display = "none";
     return;
@@ -79,7 +81,7 @@ const showSearchResult = function (emptySearch, resultData) {
 
   paginationContainer.style.display = "flex";
 
-  totalPage = Math.ceil(+resultData.metadata.totalCount / APILimit);
+  totalPage = Math.ceil(resultData.metadata.totalCount / APILimit);
 
   if (currPage === 1 && totalPage === 1) {
     prevPageBtn.style.display = "none";
@@ -103,7 +105,7 @@ const showSearchResult = function (emptySearch, resultData) {
 const onLimitChange = async function () {
   const limit = limitInput.value;
   if (limit < 3 || limit > 10) {
-    limitInputError.innerHTML = "<p>Limit value must be between 5 and 10</p>";
+    limitInputError.innerHTML = "<p>Limit value must be between 3 and 10</p>";
     limitInputError.style.display = "block";
     limitInput.value = limit < 3 ? 3 : 10;
     if(APILimit===limitInput.value){
@@ -126,7 +128,7 @@ const onChangePage = async function (e) {
   if (page.contains("prev-page-btn")) {
     currPage -= 1;
     if (currPage <= 0) {
-      currPage = 0;
+      currPage = 1;
     }
     offset = (currPage - 1) * APILimit;
   }
@@ -138,7 +140,6 @@ const onChangePage = async function (e) {
     }
     offset = (currPage - 1) * APILimit;
   }
-
   await searchFunc();
 };
 
@@ -168,7 +169,7 @@ const clearResults = function () {
 };
 
 const searchOnKeyPress = async function (e) {
-  if (e.key === "Enter") {
+  if (e.key === "Enter"){
     await searchFunc();
   }
 };
